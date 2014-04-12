@@ -1,0 +1,10 @@
+build
+.settings
+target
+
+# Intellij IDEA
+.idea/
+*.iml
+
+# Mac
+.DS_Store
