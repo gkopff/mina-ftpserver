@@ -368,7 +368,6 @@
         <module>ftplet-api</module>
         <module>core</module>
         <module>distribution</module>
-        <module>examples</module>
       </modules>
     </profile>
   </profiles>
@@ -376,7 +375,6 @@
   <modules>
     <module>ftplet-api</module>
     <module>core</module>
-    <module>examples</module>
   </modules>
 
   <properties>
