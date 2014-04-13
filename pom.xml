@@ -31,7 +31,7 @@
   <packaging>pom</packaging>
   <name>Fatboy Industrial FtpServer Parent</name>
   <description>A fork of Apache Mina Ftpserver to fix outstanding bugs.</description>
-  <version>1.0.6</version>
+  <version>1.0.0-SNAPSHOT</version>
   <url>https://github.com/gkopff/mina-ftpserver</url>
   <inceptionYear>2003</inceptionYear>
 

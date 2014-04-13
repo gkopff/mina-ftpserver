@@ -17,12 +17,12 @@
 	<parent>
 		<artifactId>ftpserver-parent</artifactId>
     <groupId>com.fatboyindustrial.ftpserver</groupId>
-		<version>1.0.6</version>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
   <groupId>com.fatboyindustrial.ftpserver</groupId>
 	<artifactId>ftplet-api</artifactId>
-	<version>1.0.6</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 	<name>Fatboy Industrial Ftplet API</name>
 	<description> Ftplets are, similar to servlets, an API to plug into the
