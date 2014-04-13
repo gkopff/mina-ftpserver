@@ -18,12 +18,12 @@
 	<description>Simple example where an Ftplet is published as a OSGi service. Another bundle, using the white-board pattern can locate this and plug it into a running server.</description>
 	<parent>
 		<artifactId>ftpserver-parent</artifactId>
-		<groupId>org.apache.ftpserver</groupId>
+    <groupId>com.fatboyindustrial.ftpserver</groupId>
 		<version>1.0.6</version>
 		<relativePath>../../pom.xml</relativePath>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.apache.ftpserver.examples</groupId>
+  <groupId>com.fatboyindustrial.ftpserver.examples</groupId>
 	<artifactId>ftpserver-osgi-ftplet-service</artifactId>
 	<name>FtpServer OSGi Ftplet service example</name>
 	<packaging>bundle</packaging>

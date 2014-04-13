@@ -17,13 +17,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
         <artifactId>ftpserver-parent</artifactId>
-        <groupId>org.apache.ftpserver</groupId>
+        <groupId>com.fatboyindustrial.ftpserver</groupId>
         <version>1.0.6</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.apache.ftpserver.examples</groupId>
+  <groupId>com.fatboyindustrial.ftpserver.examples</groupId>
 	<artifactId>ftpserver-spring-war</artifactId>
 	<name>FtpServer Spring web project example</name>
 	<packaging>war</packaging>

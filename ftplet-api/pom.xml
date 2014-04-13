@@ -16,15 +16,15 @@
 <project>
 	<parent>
 		<artifactId>ftpserver-parent</artifactId>
-		<groupId>org.apache.ftpserver</groupId>
+    <groupId>com.fatboyindustrial.ftpserver</groupId>
 		<version>1.0.6</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.apache.ftpserver</groupId>
+  <groupId>com.fatboyindustrial.ftpserver</groupId>
 	<artifactId>ftplet-api</artifactId>
 	<version>1.0.6</version>
 	<packaging>bundle</packaging>
-	<name>Apache Ftplet API</name>
+	<name>Fatboy Industrial Ftplet API</name>
 	<description> Ftplets are, similar to servlets, an API to plug into the
 		request lifecycle of FtpServer. Ftplets are called on session connect
 		and disconnect as well as before and after each command within a user

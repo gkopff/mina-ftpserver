@@ -24,10 +24,10 @@
     <version>9</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.apache.ftpserver</groupId>
+  <groupId>com.fatboyindustrial.ftpserver</groupId>
   <artifactId>ftpserver-parent</artifactId>
   <packaging>pom</packaging>
-  <name>Apache FtpServer Parent</name>
+  <name>Fatboy Industrial FtpServer Parent</name>
   <version>1.0.6</version>
   <url>http://mina.apache.org/ftpserver</url>
   <issueManagement>
