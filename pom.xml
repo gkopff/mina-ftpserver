@@ -29,11 +29,7 @@
   <packaging>pom</packaging>
   <name>Fatboy Industrial FtpServer Parent</name>
   <version>1.0.6</version>
-  <url>http://mina.apache.org/ftpserver</url>
-  <issueManagement>
-    <system>Jira</system>
-    <url>http://issues.apache.org/jira/browse/FTPSERVER</url>
-  </issueManagement>
+  <url>https://github.com/gkopff/mina-ftpserver</url>
   <inceptionYear>2003</inceptionYear>
 
   <licenses>
@@ -43,33 +39,6 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
-
-
-  <mailingLists>
-    <mailingList>
-      <name>FtpServer Users mailing list</name>
-      <subscribe>ftpserver-users-subscribe@mina.apache.org</subscribe>
-      <unsubscribe>ftpserver-users-unsubscribe@mina.apache.org</unsubscribe>
-      <post>ftpserver-users@mina.apache.org</post>
-      <archive>http://mail-archives.apache.org/mod_mbox/mina-ftpserver-users/</archive>
-    </mailingList>
-    <mailingList>
-      <name>MINA Development mailing list</name>
-      <subscribe>dev-subscribe@mina.apache.org</subscribe>
-      <unsubscribe>dev-unsubscribe@mina.apache.org</unsubscribe>
-      <post>dev@mina.apache.org</post>
-      <archive>http://mail-archives.apache.org/mod_mbox/mina-dev/</archive>
-      <otherArchives>
-        <otherArchive>http://www.nabble.com/Apache-MINA-f16868.html</otherArchive>
-      </otherArchives>
-    </mailingList>
-    <mailingList>
-      <name>MINA Commit mailing list</name>
-      <subscribe>commits-subscribe@mina.apache.org</subscribe>
-      <unsubscribe>commits-unsubscribe@mina.apache.org</unsubscribe>
-      <archive>http://mail-archives.apache.org/mod_mbox/mina-commits/</archive>
-    </mailingList>
-  </mailingLists>
 
   <developers>
     <developer>
@@ -125,12 +94,6 @@
       <url>http://andreafrancia.blogspot.com</url>
     </contributor>
   </contributors>
-
-  <scm>
-    <connection>scm:svn:http://svn.apache.org/repos/asf/mina/ftpserver/trunk</connection>
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/mina/ftpserver/trunk</developerConnection>
-    <url>http://svn.apache.org/viewvc/mina/ftpserver/trunk</url>
-  </scm>
 
   <dependencyManagement>
     <dependencies>

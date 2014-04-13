@@ -25,15 +25,6 @@
 	<name>Fatboy Industrial FtpServer Core</name>
 	<version>1.0.6</version>
 	<packaging>bundle</packaging>
-	<scm>
-		<connection>
-			scm:svn:http://svn.apache.org/repos/asf/mina/ftpserver/trunk/core
-		</connection>
-		<developerConnection>
-			scm:svn:https://svn.apache.org/repos/asf/mina/ftpserver/trunk/core
-		</developerConnection>
-		<url> http://svn.apache.org/viewvc/mina/ftpserver/trunk/core</url>
-	</scm>
 	<build>
 		<resources>
 			<resource>
