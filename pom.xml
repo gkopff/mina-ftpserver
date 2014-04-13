@@ -18,22 +18,21 @@
  under the License. -->  
 
 <project>
+  <modelVersion>4.0.0</modelVersion>
+
   <parent>
     <artifactId>apache</artifactId>
     <groupId>org.apache</groupId>
     <version>9</version>
   </parent>
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.apache.ftpserver</groupId>
+
+  <groupId>com.fatboyindustrial.ftpserver</groupId>
   <artifactId>ftpserver-parent</artifactId>
   <packaging>pom</packaging>
-  <name>Apache FtpServer Parent</name>
-  <version>1.0.6</version>
-  <url>http://mina.apache.org/ftpserver</url>
-  <issueManagement>
-    <system>Jira</system>
-    <url>http://issues.apache.org/jira/browse/FTPSERVER</url>
-  </issueManagement>
+  <name>Fatboy Industrial FtpServer Parent</name>
+  <description>A fork of Apache Mina Ftpserver to fix outstanding bugs.</description>
+  <version>1.0.0-SNAPSHOT</version>
+  <url>https://github.com/gkopff/mina-ftpserver</url>
   <inceptionYear>2003</inceptionYear>
 
   <licenses>
@@ -44,58 +43,37 @@
     </license>
   </licenses>
 
-
-  <mailingLists>
-    <mailingList>
-      <name>FtpServer Users mailing list</name>
-      <subscribe>ftpserver-users-subscribe@mina.apache.org</subscribe>
-      <unsubscribe>ftpserver-users-unsubscribe@mina.apache.org</unsubscribe>
-      <post>ftpserver-users@mina.apache.org</post>
-      <archive>http://mail-archives.apache.org/mod_mbox/mina-ftpserver-users/</archive>
-    </mailingList>
-    <mailingList>
-      <name>MINA Development mailing list</name>
-      <subscribe>dev-subscribe@mina.apache.org</subscribe>
-      <unsubscribe>dev-unsubscribe@mina.apache.org</unsubscribe>
-      <post>dev@mina.apache.org</post>
-      <archive>http://mail-archives.apache.org/mod_mbox/mina-dev/</archive>
-      <otherArchives>
-        <otherArchive>http://www.nabble.com/Apache-MINA-f16868.html</otherArchive>
-      </otherArchives>
-    </mailingList>
-    <mailingList>
-      <name>MINA Commit mailing list</name>
-      <subscribe>commits-subscribe@mina.apache.org</subscribe>
-      <unsubscribe>commits-unsubscribe@mina.apache.org</unsubscribe>
-      <archive>http://mail-archives.apache.org/mod_mbox/mina-commits/</archive>
-    </mailingList>
-  </mailingLists>
+  <scm>
+    <url>https://github.com/gkopff/mina-ftpserver</url>
+    <connection>scm:git:https://github.com/gkopff/mina-ftpserver.git</connection>
+  </scm>
 
   <developers>
     <developer>
-      <id>ngn</id>
-      <name>Niklas Gustavsson</name>
-      <email>niklas@protocol7.com</email>
-    </developer>
-    <developer>
-      <id>rana_b</id>
-      <name>Rana Battacharyya</name>
-      <email>rana_b.{aT}.yahoo.{d0T}.com</email>
-    </developer>
-    <developer>
-      <id>hammant</id>
-      <name>Paul Hammant</name>
-      <email>paul.{aT}.hammant.{d0T}.org</email>
-    </developer>
-    <developer>
-      <id>sergey</id>
-      <name>Sergey M Vladimirov</name>
-      <email>vlsergey.{aT}.gmail.{d0T}.com</email>
-      <organization>Netcracker corp.</organization>
+      <id>gkopff</id>
+      <name>Greg Kopff</name>
+      <timezone>+8</timezone>
     </developer>
   </developers>
 
   <contributors>
+    <contributor>
+      <name>Niklas Gustavsson</name>
+      <email>niklas@protocol7.com</email>
+    </contributor>
+    <contributor>
+      <name>Rana Battacharyya</name>
+      <email>rana_b.{aT}.yahoo.{d0T}.com</email>
+    </contributor>
+    <contributor>
+      <name>Paul Hammant</name>
+      <email>paul.{aT}.hammant.{d0T}.org</email>
+    </contributor>
+    <contributor>
+      <name>Sergey M Vladimirov</name>
+      <email>vlsergey.{aT}.gmail.{d0T}.com</email>
+      <organization>Netcracker corp.</organization>
+    </contributor>
     <contributor>
       <name>Birkir A. Barkarson</name>
     </contributor>
@@ -125,12 +103,6 @@
       <url>http://andreafrancia.blogspot.com</url>
     </contributor>
   </contributors>
-
-  <scm>
-    <connection>scm:svn:http://svn.apache.org/repos/asf/mina/ftpserver/trunk</connection>
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/mina/ftpserver/trunk</developerConnection>
-    <url>http://svn.apache.org/viewvc/mina/ftpserver/trunk</url>
-  </scm>
 
   <dependencyManagement>
     <dependencies>
@@ -232,48 +204,61 @@
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-enforcer-plugin</artifactId>
-        <version>1.0-alpha-3</version>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.0</version>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.2.2</version>
+        <configuration>
+          <arguments>-Dgpg.passphrase=${gpg.passphrase}</arguments>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>1.4</version>
         <executions>
           <execution>
-            <phase>validate</phase>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
             <goals>
-              <goal>enforce</goal>
+              <goal>sign</goal>
             </goals>
-            <configuration>
-              <rules>
-                <!-- Allow only Maven 2.0.5 and >2.0.7 -->
-                <requireMavenVersion>
-                  <version>[2.0.5],[2.0.7,]</version>
-                </requireMavenVersion>
-              </rules>
-            </configuration>
           </execution>
         </executions>
       </plugin>
-
       <plugin>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.4.3</version>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>2.2.1</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
-
       <plugin>
-        <artifactId>maven-eclipse-plugin</artifactId>
-        <version>2.5.1</version>
-        <configuration>
-          <downloadSources>true</downloadSources>
-          <projectNameTemplate>[artifactId]-1.0.x</projectNameTemplate>
-        </configuration>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.9.1</version>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
-
-      <plugin>
-        <artifactId>maven-release-plugin</artifactId>
-        <version>2.0-beta-7</version>
-        <configuration>
-          <tagBase>https://svn.apache.org/repos/asf/mina/sandbox/ftpserver/tags/</tagBase>
-        </configuration>
-      </plugin>
-
       <plugin>
         <artifactId>maven-remote-resources-plugin</artifactId>
         <version>1.0</version>
@@ -293,127 +278,58 @@
           </execution>
         </executions>
       </plugin>
-
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.0.2</version>
-        <configuration>
-          <source>${maven.compile.source}</source>
-          <target>${maven.compile.target}</target>
-        </configuration>
-      </plugin>
-
-	  <plugin>
-	    <groupId>org.codehaus.mojo</groupId>
-	    <artifactId>rat-maven-plugin</artifactId>
-	    <version>1.0-alpha-3</version>
-	  </plugin>
-
-      <plugin>
-        <artifactId>maven-source-plugin</artifactId>
-        <version>2.0.4</version>
-        <executions>
-          <execution>
-            <id>create-source-jar</id>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-      <plugin>
-        <artifactId>maven-idea-plugin</artifactId>
-        <version>2.1</version>
-        <configuration>
-          <jdkLevel>${maven.compile.source}</jdkLevel>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>2.2</version>
-        <configuration>
-          <archive>
-            <addMavenDescriptor>false</addMavenDescriptor>
-          </archive>
-        </configuration>
-      </plugin>
-      <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-war-plugin</artifactId>
-          <version>2.0.2</version>
-      </plugin>
     </plugins>
   </build>
 
   <profiles>
     <profile>
-      <id>apache-release</id>
+      <id>release-sign-artifacts</id>
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
       <build>
         <plugins>
           <plugin>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <version>2.5</version>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.4</version>
+            <configuration>
+              <passphrase>${gpg.passphrase}</passphrase>
+            </configuration>
             <executions>
               <execution>
-                <id>create-javadoc-jar</id>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
                 <goals>
-                  <goal>jar</goal>
+                  <goal>sign</goal>
                 </goals>
-                <configuration>
-                  <source>${maven.compile.source}</source>
-		  <excludePackageNames>
-		    *.impl:org.apache.ftpserver.example.*:org.apache.ftpserver.config.spring:org.apache.ftpserver.command.impl.listing:org.apache.ftpserver.listener.nio:org.apache.ftpserver.util
-		  </excludePackageNames>
-                </configuration>
-              </execution>
-              <execution>
-                <id>create-site-javadoc</id>
-                <phase>process-resources</phase>
-                <goals>
-                  <goal>aggregate</goal>
-                </goals>
-                <configuration>
-		  <doctitle>Apache FtpServer ${project.version} Public API</doctitle>
-		  <windowtitle>Apache FtpServer ${project.version} Public API</windowtitle>
-                  <source>${maven.compile.source}</source>
-		  <excludePackageNames>
-		    *.impl:org.apache.ftpserver.example.*:org.apache.ftpserver.config.spring:org.apache.ftpserver.command.impl.listing:org.apache.ftpserver.listener.nio:org.apache.ftpserver.util
-		  </excludePackageNames>
-                </configuration>
               </execution>
             </executions>
           </plugin>
-	  <plugin>
-	    <groupId>org.codehaus.mojo</groupId>
-	    <artifactId>rat-maven-plugin</artifactId>
-	    <version>1.0-alpha-3</version>
-            <executions>
-              <execution>
-                <id>verify-licenses</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>check</goal>
-                </goals>
-              </execution>
-            </executions>
-	  </plugin>
         </plugins>
       </build>
-      <modules>
-        <module>ftplet-api</module>
-        <module>core</module>
-        <module>distribution</module>
-        <module>examples</module>
-      </modules>
     </profile>
   </profiles>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>sonatype-nexus-snapshots</id>
+      <name>Sonatype Nexus snapshot repository</name>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>sonatype-nexus-staging</id>
+      <name>Sonatype Nexus release repository</name>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
 
   <modules>
     <module>ftplet-api</module>
     <module>core</module>
-    <module>examples</module>
   </modules>
 
   <properties>

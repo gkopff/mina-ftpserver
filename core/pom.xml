@@ -16,24 +16,15 @@
 <project>
 	<parent>
 		<artifactId>ftpserver-parent</artifactId>
-		<groupId>org.apache.ftpserver</groupId>
-		<version>1.0.6</version>
+    <groupId>com.fatboyindustrial.ftpserver</groupId>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.apache.ftpserver</groupId>
+  <groupId>com.fatboyindustrial.ftpserver</groupId>
 	<artifactId>ftpserver-core</artifactId>
-	<name>Apache FtpServer Core</name>
-	<version>1.0.6</version>
+	<name>Fatboy Industrial FtpServer Core</name>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>bundle</packaging>
-	<scm>
-		<connection>
-			scm:svn:http://svn.apache.org/repos/asf/mina/ftpserver/trunk/core
-		</connection>
-		<developerConnection>
-			scm:svn:https://svn.apache.org/repos/asf/mina/ftpserver/trunk/core
-		</developerConnection>
-		<url> http://svn.apache.org/viewvc/mina/ftpserver/trunk/core</url>
-	</scm>
 	<build>
 		<resources>
 			<resource>
