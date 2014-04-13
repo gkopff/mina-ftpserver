@@ -18,12 +18,14 @@
  under the License. -->  
 
 <project>
+  <modelVersion>4.0.0</modelVersion>
+
   <parent>
     <artifactId>apache</artifactId>
     <groupId>org.apache</groupId>
     <version>9</version>
   </parent>
-  <modelVersion>4.0.0</modelVersion>
+
   <groupId>com.fatboyindustrial.ftpserver</groupId>
   <artifactId>ftpserver-parent</artifactId>
   <packaging>pom</packaging>
@@ -40,31 +42,24 @@
     </license>
   </licenses>
 
-  <developers>
-    <developer>
-      <id>ngn</id>
+  <contributors>
+    <contributor>
       <name>Niklas Gustavsson</name>
       <email>niklas@protocol7.com</email>
-    </developer>
-    <developer>
-      <id>rana_b</id>
+    </contributor>
+    <contributor>
       <name>Rana Battacharyya</name>
       <email>rana_b.{aT}.yahoo.{d0T}.com</email>
-    </developer>
-    <developer>
-      <id>hammant</id>
+    </contributor>
+    <contributor>
       <name>Paul Hammant</name>
       <email>paul.{aT}.hammant.{d0T}.org</email>
-    </developer>
-    <developer>
-      <id>sergey</id>
+    </contributor>
+    <contributor>
       <name>Sergey M Vladimirov</name>
       <email>vlsergey.{aT}.gmail.{d0T}.com</email>
       <organization>Netcracker corp.</organization>
-    </developer>
-  </developers>
-
-  <contributors>
+    </contributor>
     <contributor>
       <name>Birkir A. Barkarson</name>
     </contributor>
