@@ -190,45 +190,11 @@
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-enforcer-plugin</artifactId>
-        <version>1.0-alpha-3</version>
-        <executions>
-          <execution>
-            <phase>validate</phase>
-            <goals>
-              <goal>enforce</goal>
-            </goals>
-            <configuration>
-              <rules>
-                <!-- Allow only Maven 2.0.5 and >2.0.7 -->
-                <requireMavenVersion>
-                  <version>[2.0.5],[2.0.7,]</version>
-                </requireMavenVersion>
-              </rules>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-      <plugin>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.4.3</version>
-      </plugin>
-
-      <plugin>
-        <artifactId>maven-eclipse-plugin</artifactId>
-        <version>2.5.1</version>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.0</version>
         <configuration>
-          <downloadSources>true</downloadSources>
-          <projectNameTemplate>[artifactId]-1.0.x</projectNameTemplate>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <artifactId>maven-release-plugin</artifactId>
-        <version>2.0-beta-7</version>
-        <configuration>
-          <tagBase>https://svn.apache.org/repos/asf/mina/sandbox/ftpserver/tags/</tagBase>
+          <source>1.5</source>
+          <target>1.5</target>
         </configuration>
       </plugin>
 
@@ -250,57 +216,6 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>
-
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.0.2</version>
-        <configuration>
-          <source>${maven.compile.source}</source>
-          <target>${maven.compile.target}</target>
-        </configuration>
-      </plugin>
-
-	  <plugin>
-	    <groupId>org.codehaus.mojo</groupId>
-	    <artifactId>rat-maven-plugin</artifactId>
-	    <version>1.0-alpha-3</version>
-	  </plugin>
-
-      <plugin>
-        <artifactId>maven-source-plugin</artifactId>
-        <version>2.0.4</version>
-        <executions>
-          <execution>
-            <id>create-source-jar</id>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-      <plugin>
-        <artifactId>maven-idea-plugin</artifactId>
-        <version>2.1</version>
-        <configuration>
-          <jdkLevel>${maven.compile.source}</jdkLevel>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>2.2</version>
-        <configuration>
-          <archive>
-            <addMavenDescriptor>false</addMavenDescriptor>
-          </archive>
-        </configuration>
-      </plugin>
-      <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-war-plugin</artifactId>
-          <version>2.0.2</version>
       </plugin>
     </plugins>
   </build>
