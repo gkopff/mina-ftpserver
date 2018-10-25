@@ -420,8 +420,8 @@ public class PropertiesUserManager extends AbstractUserManager {
         BaseUser user = new BaseUser();
         user.setName(userName);
         user.setEnabled(userDataProp.getBoolean(baseKey + ATTR_ENABLE, true));
-        user.setHomeDirectory(userDataProp
-                .getProperty(baseKey + ATTR_HOME, "/"));
+        user.setHomeDirectory(parsingUserHomeDirectory(userDataProp
+                .getProperty(baseKey + ATTR_HOME, "/")));
 
         List<Authority> authorities = new ArrayList<Authority>();
 
@@ -449,6 +449,21 @@ public class PropertiesUserManager extends AbstractUserManager {
                 + ATTR_MAX_IDLE_TIME, 0));
 
         return user;
+    }
+    
+    /**
+     * Finds the path to the HomeDirectory if an environment variable is used.
+     */
+    private String parsingUserHomeDirectory(String path) {
+        if (path.startsWith("~")) {
+            return path.replace("~", System.getProperty("user.home"));
+        } else if (path.startsWith("$HOME")) {
+            return path.replace("$HOME", System.getProperty("user.home"));
+        } else if (path.startsWith("%UserProfile%")) {
+            return path.replace("%UserProfile%", System.getProperty("user.home"));
+        } else {
+            return path;
+        }
     }
 
     /**
